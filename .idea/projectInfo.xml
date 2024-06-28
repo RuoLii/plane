@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="com.aicode.state.project.ProjectInfoState">
+    <option name="libraries">
+      <list>
+        <option value="Maven: com.google.protobuf:protobuf-java:3.11.4" />
+        <option value="Maven: mysql:mysql-connector-java:8.0.26" />
+      </list>
+    </option>
+    <option name="projectName" value="flyPlane" />
+  </component>
+</project>
