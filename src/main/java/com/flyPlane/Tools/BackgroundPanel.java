@@ -9,7 +9,7 @@ public class BackgroundPanel extends JPanel {
 
     public BackgroundPanel() {
         // 加载背景图片
-        backgroundImage = new ImageIcon(getClass().getResource("/static/2.jpg")).getImage();
+        backgroundImage = new ImageIcon(getClass().getResource("/static/1.jpg")).getImage();
     }
 
     @Override
