@@ -123,7 +123,7 @@ public class historicalPurchases extends JFrame {
                 if (selectedData == null) {
                     JOptionPane.showMessageDialog(null, "请选择一个航班后再点击退票按钮！");
                 } else {
-                    int op = JOptionPane.showConfirmDialog(null, "您选择退票的航班是: , 确定要退票吗？", "退票操作", JOptionPane.YES_NO_OPTION);
+                    int op = JOptionPane.showConfirmDialog(null, "您选择退票的航班是: " + selectedData[0] + ", 确定要退票吗？", "退票操作", JOptionPane.YES_NO_OPTION);
                     //  0 代表 '退票', 1 代表 '不退'
                     if (op == 0) {
                         if (selectedData[7].equals("已退票")) {
