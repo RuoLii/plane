@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.flyPlane.iweiPlane">
-  <grid id="27dc6" binding="container" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="container" layout-manager="GridLayoutManager" row-count="5" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
       <xy x="20" y="20" width="500" height="603"/>
@@ -11,6 +11,252 @@
       <opaque value="false"/>
     </properties>
     <border type="none"/>
-    <children/>
+    <children>
+      <grid id="23ba" layout-manager="GridLayoutManager" row-count="5" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="630" height="100"/>
+          </grid>
+        </constraints>
+        <properties>
+          <opaque value="false"/>
+          <requestFocusEnabled value="false"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="4c056" class="javax.swing.JLabel" binding="titleLabel">
+            <constraints>
+              <grid row="1" column="0" row-span="3" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="5" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <foreground color="-1"/>
+              <iconTextGap value="4"/>
+              <text value="欢迎使用 iwei 购买机票"/>
+            </properties>
+          </component>
+          <component id="18666" class="javax.swing.JButton" binding="logoutButton">
+            <constraints>
+              <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="100" height="45"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-12818004"/>
+              <borderPainted value="false"/>
+              <focusPainted value="false"/>
+              <focusable value="false"/>
+              <font name="BIZ UDGothic" size="16" style="1"/>
+              <foreground color="-1"/>
+              <opaque value="true"/>
+              <requestFocusEnabled value="false"/>
+              <text value="退出登录"/>
+            </properties>
+          </component>
+          <hspacer id="9184d">
+            <constraints>
+              <grid row="1" column="1" row-span="4" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+          </hspacer>
+          <vspacer id="12bbd">
+            <constraints>
+              <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+            </constraints>
+          </vspacer>
+          <component id="b8142" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <autoscrolls value="false"/>
+              <background color="-12094544"/>
+              <foreground color="-1"/>
+              <opaque value="true"/>
+              <text value="出票安心 · 出行安心 · 服务安心"/>
+            </properties>
+          </component>
+          <component id="697c3" class="javax.swing.JButton" binding="historyButton">
+            <constraints>
+              <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-12818004"/>
+              <borderPainted value="false"/>
+              <focusPainted value="false"/>
+              <focusable value="false"/>
+              <font name="BIZ UDGothic" size="16" style="1"/>
+              <foreground color="-1"/>
+              <requestFocusEnabled value="false"/>
+              <text value="查询历史机票"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="35512" layout-manager="GridLayoutManager" row-count="5" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="630" height="90"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-12238268"/>
+          <opaque value="false"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="2bfd4" class="javax.swing.JTextField" binding="endField">
+            <constraints>
+              <grid row="1" column="3" row-span="3" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="80" height="30"/>
+              </grid>
+            </constraints>
+            <properties/>
+          </component>
+          <component id="4a9d9" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <horizontalAlignment value="0"/>
+              <text value="终点站"/>
+            </properties>
+          </component>
+          <component id="c4c96" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <horizontalAlignment value="0"/>
+              <text value="起点站"/>
+            </properties>
+          </component>
+          <component id="bcedb" class="javax.swing.JTextField" binding="startField">
+            <constraints>
+              <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="80" height="30"/>
+              </grid>
+            </constraints>
+            <properties/>
+          </component>
+          <hspacer id="67fba">
+            <constraints>
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+          </hspacer>
+          <hspacer id="348fc">
+            <constraints>
+              <grid row="2" column="4" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+          </hspacer>
+          <component id="caac7" class="javax.swing.JButton" binding="button3" default-binding="true">
+            <constraints>
+              <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="↔"/>
+            </properties>
+          </component>
+          <component id="2371f" class="javax.swing.JButton" binding="levelButton">
+            <constraints>
+              <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="80" height="40"/>
+              </grid>
+            </constraints>
+            <properties>
+              <actionCommand value="舱位"/>
+              <background color="-12818004"/>
+              <focusPainted value="false"/>
+              <focusable value="false"/>
+              <font name="BIZ UDGothic" size="12" style="1"/>
+              <foreground color="-1"/>
+              <text value="所有舱位"/>
+            </properties>
+          </component>
+          <component id="e93e7" class="javax.swing.JButton" binding="button1" default-binding="true">
+            <constraints>
+              <grid row="4" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="80" height="40"/>
+              </grid>
+            </constraints>
+            <properties>
+              <actionCommand value="搜索"/>
+              <background color="-12818004"/>
+              <borderPainted value="true"/>
+              <focusPainted value="false"/>
+              <focusable value="false"/>
+              <font name="BIZ UDGothic" size="12" style="1"/>
+              <foreground color="-1"/>
+              <label value="搜索"/>
+              <text value="搜索"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="49eb" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="630" height="100"/>
+          </grid>
+        </constraints>
+        <properties>
+          <opaque value="false"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="b782c" class="javax.swing.JButton" binding="bookButton">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="120" height="40"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-12818004"/>
+              <borderPainted value="false"/>
+              <focusPainted value="false"/>
+              <focusable value="false"/>
+              <font name="BIZ UDGothic" size="12" style="1"/>
+              <foreground color="-1"/>
+              <text value="预订"/>
+            </properties>
+          </component>
+          <hspacer id="7310a">
+            <constraints>
+              <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+          </hspacer>
+          <hspacer id="ba488">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+          </hspacer>
+        </children>
+      </grid>
+      <vspacer id="6a5bd">
+        <constraints>
+          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
+      <scrollpane id="cbb7c">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="630" height="390"/>
+          </grid>
+        </constraints>
+        <properties>
+          <opaque value="false"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="487d4" class="javax.swing.JTable" binding="planeTable">
+            <constraints/>
+            <properties>
+              <opaque value="false"/>
+            </properties>
+          </component>
+        </children>
+      </scrollpane>
+    </children>
   </grid>
 </form>

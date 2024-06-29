@@ -47,7 +47,7 @@ public class loginFrame extends JFrame {
                         if (sql.login(usernameStr, pwdStr)){
                             JOptionPane.showMessageDialog(null, "登录成功！");
                             //  跳转到订票系统
-                            iweiPlane iweiPlane = new iweiPlane();
+                            iweiPlane iweiPlane = new iweiPlane(usernameStr);
                             iweiPlane.setVisible(true);
                             setVisible(false);
                         } else {

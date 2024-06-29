@@ -3,38 +3,94 @@ CREATE DATABASE plane;
 use plane;
 
 
-DROP TABLE IF EXISTS user;
-CREATE TABLE user(
-    id INT AUTO_INCREMENT primary key comment 'ID',
-    name VARCHAR(30) NOT NULL comment '姓名',
-    username VARCHAR(20) NOT NULL comment '账号',
-    password VARCHAR(20) NOT NULL comment '密码',
-    reservation INT DEFAULT 0 comment '订票量',
-    role INT DEFAULT 0 comment '权限',
-    INDEX idx_username(username)
-);
-
-DROP TABLE IF EXISTS plane;
-CREATE TABLE plane(
-    flightNumber VARCHAR(20) primary key comment '航班号',
-    planeType VARCHAR(30) NOT NULL comment '飞机型号',
-    flyTime DATE NOT NULL DEFAULT '2004-01-03' comment '飞行日期',
-    startStation VARCHAR(50) NOT NULL comment '起始站',
-    endStation VARCHAR(50) NOT NULL comment '终点站',
-    memberNum INT NOT NULL comment '成员定量',
-    remainTickets INT NOT NULL comment '余票量',
-    economyMoney INT NOT NULL comment '经济舱金额',
-    firstMoney INT NOT NULL comment '头等舱金额',
-    INDEX idx_flt(flightNumber)
-);
-
 DROP TABLE IF EXISTS ticketing;
-CREATE TABLE ticketing(
-    id INT PRIMARY KEY AUTO_INCREMENT comment '订票编号',
-    username VARCHAR(20) NOT NULL comment '乘客账号',
-    flightNumber VARCHAR(20) NOT NULL comment '航班号',
-    navigationLevel VARCHAR(20) NOT NULL comment '航位等级',
-    state ENUM('已购票', '已进站', '已出站', '已退票') NOT NULL comment '状态',
-    CONSTRAINT fk_ticketing_user FOREIGN KEY (username) REFERENCES user(username),
-    CONSTRAINT fk_ticketing_plane FOREIGN KEY (flightNumber) REFERENCES plane(flightNumber)
+DROP TABLE IF EXISTS plane;
+DROP TABLE IF EXISTS user;
+
+
+CREATE TABLE user
+(
+    id          INT AUTO_INCREMENT primary key comment 'ID',
+    name        VARCHAR(30) NOT NULL comment '姓名',
+    username    VARCHAR(20) NOT NULL comment '账号',
+    password    VARCHAR(20) NOT NULL comment '密码',
+    reservation INT DEFAULT 0 comment '订票量',
+    role        INT DEFAULT 0 comment '权限',
+    INDEX idx_username (username)
 );
+
+
+CREATE TABLE plane
+(
+    flightNumber  VARCHAR(20) primary key comment '航班号',
+    planeType     VARCHAR(30)                   NOT NULL comment '飞机型号',
+    flyTime       DATE                          NOT NULL DEFAULT '2004-01-03' comment '飞行日期',
+    startStation  VARCHAR(50)                   NOT NULL comment '起始站',
+    endStation    VARCHAR(50)                   NOT NULL comment '终点站',
+    memberNum     INT                           NOT NULL comment '成员定量',
+    levelType     ENUM ('经济舱位', '头等舱位') NOT NULL comment '舱位等级',
+    remainTickets INT                           NOT NULL comment '余票量',
+    Money         INT                           NOT NULL comment '金额',
+    INDEX idx_flt (flightNumber)
+);
+
+
+
+CREATE TABLE ticketing
+(
+    id              INT PRIMARY KEY AUTO_INCREMENT comment '订票编号',
+    username        VARCHAR(20)                                   NOT NULL comment '乘客账号',
+    flightNumber    VARCHAR(20)                                   NOT NULL comment '航班号',
+    navigationLevel VARCHAR(20)                                   NOT NULL comment '航位等级',
+    state           ENUM ('已购票', '已进站', '已出站', '已退票') NOT NULL comment '状态',
+    CONSTRAINT fk_ticketing_user FOREIGN KEY (username) REFERENCES user (username),
+    CONSTRAINT fk_ticketing_plane FOREIGN KEY (flightNumber) REFERENCES plane (flightNumber)
+);
+
+
+INSERT INTO plane (flightNumber, planeType, flyTime, startStation, endStation, memberNum, levelType, remainTickets, Money)
+VALUES
+    ('MF8130', '波音737', '2024-07-01', '北京', '杭州', 300, '经济舱位', 200, 700),
+    ('CA1234', '空客A320', '2024-07-02', '上海', '广州', 250, '经济舱位', 150, 600),
+    ('MU5678', '波音777', '2024-07-03', '深圳', '北京', 280, '头等舱位', 50, 1500),
+    ('CZ9876', '波音787', '2024-07-04', '成都', '重庆', 200, '经济舱位', 100, 800),
+    ('HU3456', '空客A350', '2024-07-05', '西安', '南京', 220, '经济舱位', 180, 900),
+    ('FM2468', '波音737', '2024-07-06', '武汉', '长沙', 180, '经济舱位', 120, 500),
+    ('G5ABCD', '空客A321', '2024-07-07', '哈尔滨', '沈阳', 190, '经济舱位', 160, 650),
+    ('SC1236', '波音767', '2024-07-08', '天津', '济南', 210, '经济舱位', 170, 700),
+    ('3U8888', '空客A319', '2024-07-09', '青岛', '大连', 230, '经济舱位', 200, 750),
+    ('KN6543', '波音737', '2024-07-10', '厦门', '福州', 170, '经济舱位', 140, 550),
+    ('ZH7890', '波音787', '2024-07-11', '上海', '北京', 260, '经济舱位', 190, 850),
+    ('CA5678', '空客A320', '2024-07-12', '广州', '深圳', 240, '经济舱位', 200, 800),
+    ('MU2345', '波音777', '2024-07-13', '北京', '成都', 270, '经济舱位', 150, 1000),
+    ('CZ8765', '波音787', '2024-07-14', '重庆', '西安', 190, '头等舱位', 30, 2000),
+    ('HU4567', '空客A350', '2024-07-15', '南京', '武汉', 200, '经济舱位', 160, 700),
+    ('FM5678', '波音737', '2024-07-16', '长沙', '哈尔滨', 210, '经济舱位', 170, 750),
+    ('G59999', '空客A321', '2024-07-17', '沈阳', '天津', 220, '经济舱位', 180, 800),
+    ('SC9876', '波音767', '2024-07-18', '济南', '青岛', 230, '经济舱位', 190, 850),
+    ('3U6666', '空客A319', '2024-07-19', '大连', '厦门', 240, '经济舱位', 200, 900),
+    ('KN8888', '波音737', '2024-07-20', '福州', '上海', 250, '经济舱位', 150, 1000),
+    ('ZH6666', '波音787', '2024-07-21', '北京', '广州', 260, '经济舱位', 160, 1100),
+    ('CA9999', '空客A320', '2024-07-22', '深圳', '北京', 270, '头等舱位', 50, 2500),
+    ('MU7777', '波音777', '2024-07-23', '成都', '重庆', 280, '经济舱位', 170, 1200),
+    ('CZ5555', '波音787', '2024-07-24', '西安', '南京', 290, '经济舱位', 180, 1300),
+    ('HU3333', '空客A350', '2024-07-25', '武汉', '长沙', 300, '经济舱位', 190, 1400),
+    ('FM2222', '波音737', '2024-07-26', '哈尔滨', '沈阳', 310, '经济舱位', 200, 1500),
+    ('G51111', '空客A321', '2024-07-27', '天津', '济南', 320, '经济舱位', 150, 1600),
+    ('SC3333', '波音767', '2024-07-28', '青岛', '大连', 330, '经济舱位', 160, 1700),
+    ('3U4444', '空客A319', '2024-07-29', '厦门', '福州', 340, '经济舱位', 170, 1800),
+    ('KN2222', '波音737', '2024-07-30', '上海', '北京', 350, '经济舱位', 180, 1900),
+    ('ZH4444', '波音787', '2024-07-31', '广州', '深圳', 360, '经济舱位', 190, 2000),
+    ('CA7777', '空客A320', '2024-08-01', '北京', '成都', 370, '经济舱位', 200, 2100),
+    ('MU8888', '波音777', '2024-08-02', '重庆', '西安', 380, '经济舱位', 150, 2200),
+    ('CZ9999', '波音787', '2024-08-03', '南京', '武汉', 390, '经济舱位', 160, 2300),
+    ('HU1111', '空客A350', '2024-08-04', '长沙', '哈尔滨', 400, '经济舱位', 170, 2400),
+    ('FM3333', '波音737', '2024-08-05', '沈阳', '天津', 410, '经济舱位', 180, 2500),
+    ('G5444', '空客A321', '2024-08-06', '济南', '青岛', 420, '头等舱位', 30, 2600),
+    ('SC8888', '波音767', '2024-08-07', '大连', '厦门', 430, '经济舱位', 190, 2700),
+    ('3U1111', '空客A319', '2024-08-08', '福州', '上海', 440, '经济舱位', 200, 2800),
+    ('KN7777', '波音737', '2024-08-09', '北京', '广州', 450, '经济舱位', 150, 2900),
+    ('ZH9999', '波音787', '2024-08-10', '深圳', '北京', 460, '经济舱位', 160, 3000),
+    ('CA1111', '空客A320', '2024-08-11', '成都', '重庆', 470, '经济舱位', 170, 3100),
+    ('MU2222', '波音777', '2024-08-12', '西安', '南京', 480, '经济舱位', 180, 3200),
+    ('CZ3333', '波音787', '2024-08-13', '武汉', '长沙', 490, '经济舱位', 190, 3300);
