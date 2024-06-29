@@ -47,6 +47,7 @@ CREATE TABLE ticketing
     CONSTRAINT fk_ticketing_plane FOREIGN KEY (flightNumber) REFERENCES plane (flightNumber)
 );
 
+INSERT INTO user (name, username, password) VALUES ('胡世伟', 'ruoli', '123');
 
 INSERT INTO plane (flightNumber, planeType, flyTime, startStation, endStation, memberNum, levelType, remainTickets, Money)
 VALUES
