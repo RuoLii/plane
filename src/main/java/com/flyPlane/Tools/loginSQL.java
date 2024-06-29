@@ -10,7 +10,7 @@ import java.sql.SQLException;
  * sql 类
  * 实现航空订票系统数据 CRUD 的 sql 语句实现
  */
-public class sql {
+public class loginSQL {
     //  注册
     public static boolean register(String name, String username, String password) throws SQLException {
         Connection connection = JDBCUtil.getConnection();

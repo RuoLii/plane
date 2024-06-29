@@ -1,7 +1,7 @@
 package com.flyPlane;
 
 import com.flyPlane.Tools.BackgroundPanel;
-import com.flyPlane.Tools.sql;
+import com.flyPlane.Tools.loginSQL;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -54,7 +54,7 @@ public class registerFrame extends JFrame{
                 } else {
                     //  注册功能实现
                     try {
-                        if (sql.register(nameStr, usernameStr, pwdStr)) {
+                        if (loginSQL.register(nameStr, usernameStr, pwdStr)) {
                             JOptionPane.showMessageDialog(null, "注册成功！");
                             loginFrame loginFrame = new loginFrame();
                             loginFrame.setVisible(true);

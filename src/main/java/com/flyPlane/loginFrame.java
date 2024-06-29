@@ -1,7 +1,7 @@
 package com.flyPlane;
 
 import com.flyPlane.Tools.BackgroundPanel;
-import com.flyPlane.Tools.sql;
+import com.flyPlane.Tools.loginSQL;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -44,7 +44,7 @@ public class loginFrame extends JFrame {
                     JOptionPane.showMessageDialog(null, "账号或密码不能为空！");
                 } else {
                     try {
-                        if (sql.login(usernameStr, pwdStr)){
+                        if (loginSQL.login(usernameStr, pwdStr)){
                             JOptionPane.showMessageDialog(null, "登录成功！");
                             //  跳转到订票系统
                             iweiPlane iweiPlane = new iweiPlane(usernameStr);
